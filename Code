@@ -1,0 +1,27 @@
+pins.A2.digitalWrite(false)
+pins.A3.digitalWrite(false)
+
+music.setVolume(15)
+music.magicWand.play()
+light.showAnimation(light.rainbowAnimation, 1100)
+light.clear()
+
+function BlueLed() {
+    pins.A3.digitalWrite(true)
+    pause(1000)
+    pins.A3.digitalWrite(false)
+}
+
+function RedLed() {
+    pins.A2.digitalWrite(true)
+    pause(1000)
+    pins.A2.digitalWrite(false)
+}
+
+input.touchA6.onEvent(ButtonEvent.Click, function () {
+    BlueLed()
+})
+
+input.touchA7.onEvent(ButtonEvent.Click, function () {
+    RedLed()
+})
